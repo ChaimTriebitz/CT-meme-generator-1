@@ -14,10 +14,37 @@
 		<link rel="stylesheet" href="css/meme-editor/components.css" />
 		<link rel="stylesheet" href="css/meme-editor/mq.css" />
 	</head>
-	<body>
-		<section class="gallery-section"></section>
+	<body onload="onInit()">
+		<section class="section-gallery"></section>
 
-		<section class="meme-section"></section>
+		<img src="imgs/rect/003.jpg" hidden />
+
+		<section class="section-meme">
+			<div class="canvas-container">
+				<canvas
+					id="canvas-meme"
+					width="400"
+					height="400"
+					style="outline: 1px solid green"
+				></canvas>
+			</div>
+			<button onclick="onSetMeme()"></button>
+		</section>
+
+		<!-- <div class="inputs">
+			<input
+				type="file"
+				class="file-input btn"
+				name="image"
+				onchange="onImgInput(event)"
+			/>
+
+			<button class="btn" onclick="uploadImg()">
+				Upload Image from Canvas
+			</button>
+			<p class="user-msg"></p>
+			<div class="share-container"></div>
+		</div> -->
 
 		<script src="js/service/util.service.js"></script>
 		<script src="js/service/gallery.service.js"></script>
