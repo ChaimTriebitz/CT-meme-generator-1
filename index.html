@@ -15,11 +15,14 @@
 		<link rel="stylesheet" href="css/meme-editor/mq.css" />
 	</head>
 	<body onload="onInit()">
-		<section class="section-gallery"></section>
+		<section class="section-gallery">
+			<h1>hello gallery</h1>
+			<div class="images-container"></div>
+		</section>
 
 		<img src="imgs/rect/003.jpg" hidden />
 
-		<section class="section-meme">
+		<section class="section-meme" hidden>
 			<div class="canvas-container">
 				<canvas
 					id="canvas-meme"
@@ -28,23 +31,19 @@
 					style="outline: 1px solid green"
 				></canvas>
 			</div>
-			<button onclick="onSetMeme()"></button>
+			<form
+				class="canvas-setting-form"
+				oninput="onSetInputs(event,this)"
+				onchange="onSetInputs(event,this)"
+				onclick="onSetInputs(event,this)"
+			>
+				<input type="text" name="text" placeholder="CT" />
+				<input type="color" name="color" />
+				<input type="button" name="increase" />
+				<input type="button" name="decrease" />
+				<input type="button" name="line-break" />
+			</form>
 		</section>
-
-		<!-- <div class="inputs">
-			<input
-				type="file"
-				class="file-input btn"
-				name="image"
-				onchange="onImgInput(event)"
-			/>
-
-			<button class="btn" onclick="uploadImg()">
-				Upload Image from Canvas
-			</button>
-			<p class="user-msg"></p>
-			<div class="share-container"></div>
-		</div> -->
 
 		<script src="js/service/util.service.js"></script>
 		<script src="js/service/gallery.service.js"></script>
