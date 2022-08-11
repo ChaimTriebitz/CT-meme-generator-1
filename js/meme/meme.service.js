@@ -13,7 +13,10 @@ var gMeme = {
 	],
 }
 function createMemeImg(id) {
-	const img = gImgs.find((img) => img.id === id)
+	let img
+	if (id > 1000) {
+		img = gImgs.find((img) => img.id === id)
+	} else img = gImgs[id]
 	const elImg = new Image()
 	elImg.src = img.url
 	gElImg = elImg

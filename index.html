@@ -13,18 +13,43 @@
 		<link rel="stylesheet" href="css/meme-editor/basics.css" />
 		<link rel="stylesheet" href="css/meme-editor/components.css" />
 		<link rel="stylesheet" href="css/meme-editor/mq.css" />
+		<link rel="stylesheet" href="css/main.css" />
 	</head>
 	<body onload="onInit()">
-		<section class="section-gallery">
+		<header class="main-header main-layout">
+			<div class="main-header-content flex space-between align-center">
+				<div class="logo">
+					<img src="/img/logo/logo.png" alt="" class="logo-image" />
+				</div>
+				<nav class="header-nav flex space-around align-center">
+					<div class="search-bar flex space-around align-center active">
+						<i class="search-icon" onclick="onSearchImg(this)"></i>
+						<input type="text" class="search" placeholder="Search ..." />
+						<i class="microphone-icon"></i>
+					</div>
+					<button class="random-img-btn" onclick="onSetRandomImg()">
+						RANDOM
+					</button>
+					<div class="link display">
+						<a href="#">Display</a>
+					</div>
+					<div class="link about">
+						<a href="#">About</a>
+					</div>
+				</nav>
+			</div>
+		</header>
+
+		<section class="section-gallery main-layout">
 			<div class="images-container"></div>
 		</section>
 
-		<section class="section-meme" hidden>
+		<section class="section-meme main-layout flex align-center" hidden>
 			<div class="canvas-container">
 				<canvas
 					id="canvas-meme"
-					width="400"
-					height="400"
+					width="500"
+					height="500"
 					style="outline: 1px solid green"
 				></canvas>
 			</div>
