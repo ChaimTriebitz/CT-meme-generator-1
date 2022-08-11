@@ -16,11 +16,8 @@
 	</head>
 	<body onload="onInit()">
 		<section class="section-gallery">
-			<h1>hello gallery</h1>
 			<div class="images-container"></div>
 		</section>
-
-		<img src="imgs/rect/003.jpg" hidden />
 
 		<section class="section-meme" hidden>
 			<div class="canvas-container">
@@ -31,24 +28,47 @@
 					style="outline: 1px solid green"
 				></canvas>
 			</div>
-			<form
-				class="canvas-setting-form"
-				oninput="onSetInputs(event,this)"
-				onchange="onSetInputs(event,this)"
-				onclick="onSetInputs(event,this)"
-			>
-				<input type="text" name="text" placeholder="CT" />
-				<input type="color" name="color" />
-				<input type="button" name="increase" />
-				<input type="button" name="decrease" />
-				<input type="button" name="line-break" />
-			</form>
+			<div class="setttings-meme-container">
+				<form
+					class="meme-text-form"
+					oninput="onInputText(this)"
+					onchange="onChangeColor(this)"
+				>
+					<input type="text" name="text" />
+					<input class="meme-settings" type="color" name="text-color" />
+				</form>
+				<button
+					class="meme-settings text-decrease"
+					onclick="onTextDecrease()"
+				>
+					decrease
+				</button>
+				<button
+					class="meme-settings text-increase"
+					onclick="onTextIncrease()"
+				>
+					increase
+				</button>
+				<button
+					class="meme-settings line-switch"
+					onclick="onTextSwichLine(this)"
+				>
+					end
+				</button>
+
+				<button
+					class="meme-settings text-line-break"
+					onclick="onTextBraekLine()"
+				>
+					break
+				</button>
+			</div>
 		</section>
 
-		<script src="js/service/util.service.js"></script>
-		<script src="js/service/gallery.service.js"></script>
-		<script src="js/service/meme.service.js"></script>
-		<script src="js/controller/gallery.controller.js"></script>
-		<script src="js/controller/meme.controller.js"></script>
+		<script src="js/utils/util.service.js"></script>
+		<script src="js/gallery/gallery.service.js"></script>
+		<script src="js/meme/meme.service.js"></script>
+		<script src="js/gallery/gallery.controller.js"></script>
+		<script src="js/meme/meme.controller.js"></script>
 	</body>
 </html>

@@ -3,7 +3,13 @@ var gMeme = {
 	selectedImgId: 1,
 	selectedLineIdx: 0,
 	lines: [
-		{ txt: 'I sometimes eat Falafel', size: 20, align: 'left', color: 'red' },
+		{
+			txt: 'I sometimes eat Falafel',
+			size: 20,
+			align: 'left',
+			color: 'black',
+			yPos: 1,
+		},
 	],
 }
 function createMemeImg(id) {
@@ -20,17 +26,21 @@ function setColorTxt(val) {
 	gMeme.lines[gMeme.selectedLineIdx].color = val
 }
 function setSizeTxt(val) {
-	if (val === 'increase') {
-		gMeme.lines[gMeme.selectedLineIdx].size += 1
-	} else {
-		gMeme.lines[gMeme.selectedLineIdx].size -= 1
-	}
+	gMeme.lines[gMeme.selectedLineIdx].size += val
 }
-function setBreakLine(elTxt) {
-	elTxt.value = ''
+function setBreakLine() {
+	gMeme.lines.push({
+		txt: '',
+		size: 20,
+		align: 'left',
+		color: 'black',
+		yPos: 1,
+	})
 	gMeme.selectedLineIdx++
-	gMeme.lines.push({ txt: '', size: 20, align: 'left', color: 'red' })
 	console.log(gMeme)
+}
+function setSwichLine(val) {
+	gMeme.lines[gMeme.selectedLineIdx].yPos = val
 }
 function getMeme() {
 	return gMeme
