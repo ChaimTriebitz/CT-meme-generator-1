@@ -16,11 +16,12 @@ function createMemeImg(id) {
 	let img
 	if (id > 1000) {
 		img = gImgs.find((img) => img.id === id)
+		gMeme.selectedImgId = id
 	} else img = gImgs[id]
 	const elImg = new Image()
 	elImg.src = img.url
 	gElImg = elImg
-	gMeme.selectedImgId = id
+	gMeme.selectedImgId = img.id
 }
 function setLineTxt(txt) {
 	gMeme.lines[gMeme.selectedLineIdx].txt = txt

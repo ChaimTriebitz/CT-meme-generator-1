@@ -19,13 +19,13 @@
 		<header class="main-header main-layout">
 			<div class="main-header-content flex space-between align-center">
 				<div class="logo">
-					<img src="/img/logo/logo.png" alt="" class="logo-image" />
+					<img src="img/logo/logo.png" alt="" class="logo-image" />
 				</div>
 				<nav class="header-nav flex space-around align-center">
 					<div class="search-bar flex space-around align-center active">
-						<i class="search-icon" onclick="onSearchImg(this)"></i>
+						<i class="icon search-icon" onclick="onSearchImg(this)"></i>
 						<input type="text" class="search" placeholder="Search ..." />
-						<i class="microphone-icon"></i>
+						<i class="icon microphone-icon"></i>
 					</div>
 					<button class="random-img-btn" onclick="onSetRandomImg()">
 						RANDOM
@@ -44,49 +44,51 @@
 			<div class="images-container"></div>
 		</section>
 
-		<section class="section-meme main-layout flex align-center" hidden>
-			<div class="canvas-container">
-				<canvas
-					id="canvas-meme"
-					width="500"
-					height="500"
-					style="outline: 1px solid green"
-				></canvas>
-			</div>
-			<div class="setttings-meme-container">
-				<form
-					class="meme-text-form"
-					oninput="onInputText(this)"
-					onchange="onChangeColor(this)"
-				>
-					<input type="text" name="text" />
-					<input class="meme-settings" type="color" name="text-color" />
-				</form>
-				<button
-					class="meme-settings text-decrease"
-					onclick="onTextDecrease()"
-				>
-					decrease
-				</button>
-				<button
-					class="meme-settings text-increase"
-					onclick="onTextIncrease()"
-				>
-					increase
-				</button>
-				<button
-					class="meme-settings line-switch"
-					onclick="onTextSwichLine(this)"
-				>
-					end
-				</button>
+		<section class="section-meme main-layout">
+			<div class="meme-content-container flex align-center space-between">
+				<div class="canvas-container" hidden>
+					<canvas
+						id="canvas-meme"
+						width="500"
+						height="500"
+						style="outline: 1px solid green; cursor: text"
+					></canvas>
+				</div>
+				<div class="setttings-meme-container" hidden>
+					<form
+						class="meme-text-form"
+						oninput="onInputText(this)"
+						onchange="onChangeColor(this)"
+					>
+						<input type="text" name="text" />
+						<input class="meme-settings" type="color" name="text-color" />
+					</form>
+					<button
+						class="meme-settings text-decrease"
+						onclick="onTextDecrease()"
+					>
+						decrease
+					</button>
+					<button
+						class="meme-settings text-increase"
+						onclick="onTextIncrease()"
+					>
+						increase
+					</button>
+					<button
+						class="meme-settings line-switch"
+						onclick="onTextSwichLine(this)"
+					>
+						end
+					</button>
 
-				<button
-					class="meme-settings text-line-break"
-					onclick="onTextBraekLine()"
-				>
-					break
-				</button>
+					<button
+						class="meme-settings text-line-break"
+						onclick="onTextBraekLine()"
+					>
+						break
+					</button>
+				</div>
 			</div>
 		</section>
 

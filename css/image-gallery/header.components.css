@@ -49,9 +49,7 @@
 
 .search-bar {
 	position: absolute;
-
 	left: -300px;
-
 	width: 250px;
 	height: 42.5px;
 	border: 1px solid var(--clr-1);
@@ -68,6 +66,11 @@
 	color: var(--clr-3);
 	font-size: 1.3em;
 }
+
+.icon {
+	font-family: fa-solid;
+}
+
 .search-icon::before {
 	font-family: fa-solid;
 	content: '\f002';
