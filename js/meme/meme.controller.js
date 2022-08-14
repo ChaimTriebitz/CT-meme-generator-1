@@ -1,5 +1,7 @@
 var gElCanvas
 var gCtx
+var gStartPos
+var gIsStickersOn = false
 window.addEventListener('resize', () => {
 	resixeCanvas()
 	createMemeImg(gMeme.selectedImgId)
@@ -8,7 +10,10 @@ window.addEventListener('resize', () => {
 function onInit() {
 	gElCanvas = document.getElementById('canvas-meme')
 	gCtx = gElCanvas.getContext('2d')
+	addListeners()
+	resixeCanvas()
 }
+
 function renderMeme() {
 	const meme = getMeme()
 	const elImg = getElImg()
@@ -102,21 +107,10 @@ function onTextBraekLine() {
 	setBreakLine()
 	reloadTextArea()
 }
-function onTextSwichLine(elBtn) {
-	reloadTextArea()
-	switch (elBtn.innerText) {
-		case 'end':
-			setSwichLine(gElCanvas.height - 75)
-			elBtn.innerText = 'start'
-			break
-		case 'start':
-			elBtn.innerText = 'end'
-			setSwichLine(1)
-			break
-
-		default:
-			break
-	}
+function onAddStickers(elBtn) {
+	const elStickers = document.querySelector('.stickers-container')
+	elStickers.style.display = !gIsStickersOn ? 'grid' : 'none'
+	gIsStickersOn = !gIsStickersOn
 }
 function reloadTextArea() {
 	const elTxt = document.querySelector('[name=text]')
@@ -136,4 +130,36 @@ function onSearchImg(elIcon) {
 }
 function onGoToGallery() {
 	window.location.reload()
+}
+function onDown(ev) {
+	const pos = getEvPos(ev)
+	if (!isStickerClicked(pos)) return
+	setCircleDrag(true)
+	gStartPos = pos
+	document.body.style.cursor = 'grabbing'
+}
+
+function onMove(ev) {
+	const sticker = gStickers[gCurrSticker]
+	console.log(sticker)
+	if (!sticker.isDrag) return
+	const pos = getEvPos(ev)
+	const dx = pos.x - gStartPos.x
+	const dy = pos.y - gStartPos.y
+	moveSticker(dx, dy)
+	gStartPos = pos
+}
+
+function onUp() {
+	setStickerDrag(false)
+	document.body.style.cursor = 'grab'
+}
+function onStikerClicked(ev, elSticker) {
+	gCurrSticker = elSticker.id
+	console.log(gCurrSticker)
+	gStartPos = getEvPos(ev)
+	// if (!isStickerClicked(gStartPos)) return
+	setStickerDrag(true)
+	document.body.style.cursor = 'grabbing'
+	gStickers[gCurrSticker].isDrag = true
 }

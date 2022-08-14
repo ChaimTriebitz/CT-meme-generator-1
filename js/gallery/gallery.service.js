@@ -1,4 +1,5 @@
 var gImgs = []
+
 _createImgs()
 function getImgsForDisplay() {
 	return gImgs
@@ -7,8 +8,8 @@ function getImgsForDisplay() {
 function _createImgs() {
 	for (let i = 0; i < 16; i++) {
 		const img = _createImg(makeId(5), `img/square/${i + 1}.jpg`, [
-			'lorem',
-			'ipsem',
+			'picture',
+			'squre',
 		])
 		gImgs.push(img)
 	}

@@ -1,16 +1,20 @@
+.setting-meme {
+	/* height: 100vh; */
+	z-index: -1;
+}
 .meme-content-container {
 	margin-top: 180px;
 	background-color: var(--clr-3);
-	width: 80%;
+	width: 100%;
 	box-shadow: 0px -3px 5px 5px rgba(0, 73, 83, 0.4);
 }
 
 .canvas-container,
 .setttings-meme-container {
-	z-index: 5;
 	margin: auto;
 	width: 50%;
 	height: 50%;
+	padding: 50px;
 }
 .setttings-meme-container {
 	width: 50%;
@@ -60,4 +64,26 @@
 .meme-text-input {
 	width: 250px;
 	font-size: 1.3em;
+}
+.text-decrease,
+.text-increase {
+	width: 50px;
+}
+.sticker {
+	width: 50px;
+	height: 50px;
+}
+.stickers-container {
+	position: absolute;
+	top: 50;
+	right: 5%;
+	max-height: 550px;
+	max-width: 450px;
+	display: grid;
+	gap: 5px;
+	grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+	align-items: flex-end;
+	padding: 10px;
+	background-color: var(--clr-5);
+	display: none;
 }

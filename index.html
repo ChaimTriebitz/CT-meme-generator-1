@@ -7,8 +7,8 @@
 		<title>Ultimate Meme Generator</title>
 		<link rel="stylesheet" href="css/main.css" />
 	</head>
-	<body onload="onInit()">
-		<header class="main-header main-layout">
+	<body onload="onInit()" class="main-layout">
+		<header class="main-header">
 			<div class="main-header-content flex space-between align-center">
 				<div class="logo">
 					<img src="img/logo/logo.png" alt="" class="logo-image" />
@@ -34,14 +34,20 @@
 						<button class="random-img-btn gallery-btn">About</button>
 					</div>
 				</nav>
+				<button
+					class="random-img-btn btn-hamburger display-none"
+					onclick="onOpenHeaderNav(this)"
+				>
+					<i class="icon hamburger-icon"></i>
+				</button>
 			</div>
 		</header>
 
-		<section class="section-gallery main-layout">
+		<section class="section-gallery">
 			<div class="images-container images"></div>
 		</section>
 
-		<section class="section-meme main-layout">
+		<section class="section-meme">
 			<div class="meme-content-container flex align-center space-between">
 				<div class="canvas-container" hidden>
 					<canvas
@@ -79,30 +85,31 @@
 								name="text-color"
 							/>
 						</form>
+
+						<button
+							class="setting-meme-btn line-switch"
+							onclick="onAddStickers(this)"
+						>
+							stickers
+						</button>
 						<button
 							class="setting-meme-btn text-decrease"
 							onclick="onTextDecrease()"
 						>
-							decrease
+							➖
 						</button>
 						<button
 							class="setting-meme-btn text-increase"
 							onclick="onTextIncrease()"
 						>
-							increase
-						</button>
-						<button
-							class="setting-meme-btn line-switch"
-							onclick="onTextSwichLine(this)"
-						>
-							end
+							➕
 						</button>
 
 						<button
 							class="setting-meme-btn text-line-break"
 							onclick="onTextBraekLine()"
 						>
-							break
+							new line
 						</button>
 						<button class="setting-meme-btn download-canvas">
 							<a href="#" onclick="downloadCanvas(this)" download=""
@@ -110,10 +117,11 @@
 							>
 						</button>
 					</div>
+					<div class="stickers-container"></div>
 				</div>
 			</div>
 		</section>
-		<footer class="main-footer">
+		<footer class="main-footer full">
 			<div class="logo footer-logo">
 				<img
 					class="footer-logo"

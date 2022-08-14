@@ -15,9 +15,9 @@
 	--clr-5: #f0fff0;
 	--clr-6: rgb(26, 36, 33);
 	/* size */
-	--large: 1260px;
-	--medium: 900px;
-	--small: 650px;
+	--large: 1000px;
+	--medium: 850px;
+	--small: 500px;
 	--mobile-height: 1280px;
 }
 /* TYPOGRAPHY */

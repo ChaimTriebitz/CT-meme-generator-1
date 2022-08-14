@@ -1,4 +1,9 @@
-/* MAIN */
+.section-gallery {
+	margin-top: 27.5vh;
+	margin-left: 5%;
+	margin-right: 5%;
+}
+
 .gallery-image {
 	border-radius: 10px;
 	cursor: pointer;
@@ -15,7 +20,7 @@
 }
 
 .images-container {
-	margin-top: 200px;
+	height: 100vh;
 	display: grid;
 	gap: 30px;
 	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -23,8 +28,4 @@
 }
 .gallery-image:hover {
 	opacity: 0.5;
-}
-.section-gallery,
-.section-meme {
-	margin-top: 15%;
 }
