@@ -1,0 +1,63 @@
+.meme-content-container {
+	margin-top: 180px;
+	background-color: var(--clr-3);
+	width: 80%;
+	box-shadow: 0px -3px 5px 5px rgba(0, 73, 83, 0.4);
+}
+
+.canvas-container,
+.setttings-meme-container {
+	z-index: 5;
+	margin: auto;
+	width: 50%;
+	height: 50%;
+}
+.setttings-meme-container {
+	width: 50%;
+	height: 50%;
+}
+.setting-meme-btn {
+	font-size: 1.2em;
+	width: 150px;
+	height: 35px;
+	color: var(--clr-5);
+	background: linear-gradient(
+		var(--clr-1),
+		var(--clr-2),
+		var(--clr-3),
+		var(--clr-4),
+		var(--clr-6)
+	);
+	background-size: 300%;
+}
+.setttings-meme-container {
+	flex-direction: column;
+	gap: 30px;
+}
+.output-settings-container > div {
+	padding: 5px;
+	font-size: 1.3em;
+	width: 150px;
+	height: 35px;
+	border: 2px solid var(--clr-4);
+}
+.output-settings-container > div > span {
+	color: var(--clr-5);
+}
+.settings-meme-inputs {
+	justify-content: center;
+	gap: 10px;
+}
+.meme-text-form {
+	height: 50px;
+	justify-content: center;
+	margin: auto;
+	width: 100%;
+}
+.meme-settings {
+	height: 50px;
+}
+.meme-text-input {
+	width: 250px;
+	font-size: 1.3em;
+}

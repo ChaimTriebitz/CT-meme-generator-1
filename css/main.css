@@ -1,13 +1,10 @@
-/* 
-*/
-@import 'image-gallery/basics.css';
-@import 'image-gallery/components.css';
-@import 'image-gallery/header.components.css';
-@import 'image-gallery/mq.css';
-@import 'meme-editor/setup.css';
-@import 'meme-editor/basics.css';
-@import 'meme-editor/components.css';
-@import 'meme-editor/mq.css';
+/* SETTINGS*/
+@import 'basics.css';
+@import 'meme-components.css';
+@import 'header-components.css';
+@import 'footer-components.css';
+@import 'gallery-components.css';
+@import 'mq.css';
 /* VARS */
 :root {
 	/* colors */

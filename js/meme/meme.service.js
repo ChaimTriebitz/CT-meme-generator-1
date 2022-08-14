@@ -8,7 +8,7 @@ var gMeme = {
 			size: 20,
 			align: 'left',
 			color: 'black',
-			yPos: 1,
+			yPos: 0,
 		},
 	],
 }
@@ -31,17 +31,17 @@ function setColorTxt(val) {
 }
 function setSizeTxt(val) {
 	gMeme.lines[gMeme.selectedLineIdx].size += val
+	return gMeme.lines[gMeme.selectedLineIdx].size
 }
 function setBreakLine() {
+	gMeme.selectedLineIdx++
 	gMeme.lines.push({
 		txt: '',
 		size: 20,
 		align: 'left',
 		color: 'black',
-		yPos: 1,
+		yPos: gMeme.selectedLineIdx,
 	})
-	gMeme.selectedLineIdx++
-	console.log(gMeme)
 }
 function setSwichLine(val) {
 	gMeme.lines[gMeme.selectedLineIdx].yPos = val
@@ -54,4 +54,9 @@ function getImgs() {
 }
 function getElImg() {
 	return gElImg
+}
+function downloadCanvas(elLink) {
+	const data = gElCanvas.toDataURL()
+	elLink.href = data
+	elLink.download = 'my-image.jpg'
 }

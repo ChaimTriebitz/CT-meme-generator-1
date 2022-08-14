@@ -5,14 +5,6 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Ultimate Meme Generator</title>
-		<link rel="stylesheet" href="css/image-gallery/setup.css" />
-		<link rel="stylesheet" href="css/image-gallery/basics.css" />
-		<link rel="stylesheet" href="css/image-gallery/components.css" />
-		<link rel="stylesheet" href="css/image-gallery/mq.css" />
-		<link rel="stylesheet" href="css/meme-editor/setup.css" />
-		<link rel="stylesheet" href="css/meme-editor/basics.css" />
-		<link rel="stylesheet" href="css/meme-editor/components.css" />
-		<link rel="stylesheet" href="css/meme-editor/mq.css" />
 		<link rel="stylesheet" href="css/main.css" />
 	</head>
 	<body onload="onInit()">
@@ -31,17 +23,22 @@
 						RANDOM
 					</button>
 					<div class="link display">
-						<a href="#">Display</a>
+						<button
+							class="random-img-btn gallery-btn"
+							onclick="onGoToGallery()"
+						>
+							Gallery
+						</button>
 					</div>
 					<div class="link about">
-						<a href="#">About</a>
+						<button class="random-img-btn gallery-btn">About</button>
 					</div>
 				</nav>
 			</div>
 		</header>
 
 		<section class="section-gallery main-layout">
-			<div class="images-container"></div>
+			<div class="images-container images"></div>
 		</section>
 
 		<section class="section-meme main-layout">
@@ -54,43 +51,90 @@
 						style="outline: 1px solid green; cursor: text"
 					></canvas>
 				</div>
-				<div class="setttings-meme-container" hidden>
-					<form
-						class="meme-text-form"
-						oninput="onInputText(this)"
-						onchange="onChangeColor(this)"
-					>
-						<input type="text" name="text" />
-						<input class="meme-settings" type="color" name="text-color" />
-					</form>
-					<button
-						class="meme-settings text-decrease"
-						onclick="onTextDecrease()"
-					>
-						decrease
-					</button>
-					<button
-						class="meme-settings text-increase"
-						onclick="onTextIncrease()"
-					>
-						increase
-					</button>
-					<button
-						class="meme-settings line-switch"
-						onclick="onTextSwichLine(this)"
-					>
-						end
-					</button>
+				<div class="setttings-meme-container flex space-around" hidden>
+					<div class="output-settings-container flex space-around">
+						<div class="output-color flex align-center">
+							color:
+							<span class="color"></span>
+						</div>
+						<div class="output-size flex align-center">
+							size: <span class="size"></span> px
+						</div>
+					</div>
+					<div class="settings-meme-inputs flex align-center wrap">
+						<form
+							class="meme-text-form flex"
+							oninput="onInputText(this)"
+							onchange="onChangeColor(this)"
+						>
+							<input
+								class="meme-text-input"
+								type="text"
+								name="text"
+								placeholder="add some text"
+							/>
+							<input
+								class="meme-settings"
+								type="color"
+								name="text-color"
+							/>
+						</form>
+						<button
+							class="setting-meme-btn text-decrease"
+							onclick="onTextDecrease()"
+						>
+							decrease
+						</button>
+						<button
+							class="setting-meme-btn text-increase"
+							onclick="onTextIncrease()"
+						>
+							increase
+						</button>
+						<button
+							class="setting-meme-btn line-switch"
+							onclick="onTextSwichLine(this)"
+						>
+							end
+						</button>
 
-					<button
-						class="meme-settings text-line-break"
-						onclick="onTextBraekLine()"
-					>
-						break
-					</button>
+						<button
+							class="setting-meme-btn text-line-break"
+							onclick="onTextBraekLine()"
+						>
+							break
+						</button>
+						<button class="setting-meme-btn download-canvas">
+							<a href="#" onclick="downloadCanvas(this)" download=""
+								>Download</a
+							>
+						</button>
+					</div>
 				</div>
 			</div>
 		</section>
+		<footer class="main-footer">
+			<div class="logo footer-logo">
+				<img
+					class="footer-logo"
+					src="/img/CT-logos_transparent.svg"
+					alt=""
+				/>
+			</div>
+			<div class="donation">
+				<h5 class="donate">Please Donate For More Features</h5>
+			</div>
+			<div class="rights">
+				<small> © 2022 CTmaps.com contect us at </small>
+				<div class="logo small-logo">
+					<img
+						class="small-logo"
+						src="/img/CT-logos_transparent.svg"
+						alt=""
+					/>
+				</div>
+			</div>
+		</footer>
 
 		<script src="js/utils/util.service.js"></script>
 		<script src="js/gallery/gallery.service.js"></script>
